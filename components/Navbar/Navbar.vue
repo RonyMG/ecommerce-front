@@ -3,7 +3,7 @@
 
         <nav id="Header" class="header__nav navbar navbar-expand-lg">
             <div class="main-container container-fluid h-auto">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">logotipo</a>
             <div class="d-flex">
                 <button class="button-menu d-flex d-xl-none"
                 type="button" 
@@ -14,7 +14,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
                 <div class="header__menu">
-                    <NavMenu :menuItems="menuItems"></NavMenu>
+                    <NavMenu></NavMenu>
                 </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
 
             <div class="offcanvas-body main-container pe-0 me-0">
                 <div class="header__menu header__menu--mobile">
-                    <NavMenu :menuItems="menuItems"></NavMenu>
+                    <NavMenu></NavMenu>
                 </div>
             </div>
         </div>
@@ -55,42 +55,17 @@ export default {
 
     name: 'NavbarC',
     
-    props: ["menuItems", "index"],
-
     mounted() {
-        this.handleResize();
         this.updateHeaderHeight();
-        this.initScrollHandler();
 
-        window.addEventListener('resize', this.handleResize);
         window.addEventListener('resize', this.updateHeaderHeight);
-        window.addEventListener('scroll', this.manejarScroll);
     },
 
     beforeDestroy() {
-        window.removeEventListener('resize', this.handleResize);
         window.removeEventListener('resize', this.updateHeaderHeight);
-        window.removeEventListener('scroll', this.manejarScroll);
     },
 
     methods: {
-        handleResize() {
-        const windowWidth = window.innerWidth;
-        const resolutionThreshold = 1199;
-        let offCanvasTag = document.querySelector('.offcanvas.offcanvas-start');
-        let offCanvasBackdropTag = document.querySelector('.offcanvas-backdrop');
-        let body = document.body;
-
-        if (windowWidth > resolutionThreshold) {
-            if (offCanvasTag && offCanvasBackdropTag) {
-            if (offCanvasTag.classList.contains("show")) {
-                offCanvasTag.classList.remove('show');
-                offCanvasBackdropTag.classList.remove('show');
-                body.style.overflow = '';
-            }
-            }
-        }
-        },
 
         updateHeaderHeight() {
             const header = document.getElementById('Header');
@@ -100,21 +75,6 @@ export default {
             }
         },
 
-        manejarScroll() {
-            let alturaLimite = 150;
-            let miHeader = document.getElementById("Header");
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > alturaLimite) {
-                miHeader.classList.remove("scroll");
-            } else {
-                miHeader.classList.add("scroll");
-            }
-        },
-
-        initScrollHandler() {
-            this.manejarScroll();
-        }
     }
 }
 </script>

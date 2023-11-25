@@ -42,7 +42,7 @@
 
 <script>
 export default {
-    props: ["menuItems"],
+    inject: ["menuItems"],
     methods: {
         formatToKebabCase(text) {
             return text

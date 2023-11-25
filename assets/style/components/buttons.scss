@@ -1,9 +1,8 @@
-@mixin mainButton ($font-size, $min-width, $gap){
+@mixin mainButton ($font-size, $border-radius, $gap){
   background-color: var(--primary);
-  border-radius: 15px;
+  border-radius: $border-radius;
   color: var(--secondary);
   padding: 5px;
-  min-width: $min-width;
   font-size: $font-size;
   display: flex;
   align-items: center;
@@ -33,4 +32,24 @@
   transform: rotate(90deg);
   color: var(--main-c);
 
+}
+
+.main-banner__button{
+  @include mainButton(30px, 50px, 25px);
+  color:red;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  font-weight: 500;
+  color: var(--main-c);
+  background-color: transparent;
+  border: 1px solid var(--main-c);
+  min-width: 70px;
+  opacity: .8;
+  &:hover{
+    transform: scale(1.2);
+    transition: transform .3s;
+  }
+  &.main-banner__button--next{
+    min-width: 70px;
+  }
 }

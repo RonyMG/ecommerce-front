@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   css: [
     "bootstrap/dist/css/bootstrap.css",
     "~/assets/style/main.scss",
+    "~/assets/style/home.scss"
   ],
   app: {
     head: {

@@ -27,7 +27,7 @@
 export default {
     name: 'FooterC',
 
-    props: ["menuItems"],
+    inject: ["menuItems"],
     
     mounted() {
         this.updateFooterHeight();

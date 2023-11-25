@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar :menuItems="menuItems"></Navbar>
+    <Navbar></Navbar>
     <div class="content-container first-section">
       <NuxtPage/>
     </div>
@@ -10,6 +10,11 @@
 
 <script>
 export default {
+  provide(){
+    return{
+      menuItems: this.menuItems
+    }
+  },
   data: () => ({
       menuItems: ['Home', 'About us', 'Locations', 'Terms and conditions']
   }),
