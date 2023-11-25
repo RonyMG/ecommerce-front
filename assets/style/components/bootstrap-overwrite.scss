@@ -1,0 +1,7 @@
+.form-control, button.btn, button.navbar-toggler{
+  &:focus, :active, &:checked{
+    border-color: initial;
+    outline: 0;
+    box-shadow: none !important;
+  }
+}

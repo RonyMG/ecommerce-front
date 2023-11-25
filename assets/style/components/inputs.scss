@@ -1,0 +1,42 @@
+:root{
+  --input-gap: 15px;
+}
+
+.form-cell__container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--input-gap);
+}
+
+@mixin form-cell($min-width, $max-width){
+  width: 100%;
+  flex: 1;
+  min-width: $min-width;
+  max-width: $max-width;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.form-cell__100{
+  @include form-cell(60%, 100%);
+}
+
+.form-cell__50{
+  @include form-cell(35%, calc(50% - var(--input-gap)));
+}
+.main-input{
+  width: 100%;
+  border: 1px solid var(--lighter-muted);
+  border-radius: 4px;
+  height: 40px;
+  background-color: transparent;
+  padding: 5px 15px;
+  color: var(--deeper-muted);
+  font-size: 15px;
+  &::placeholder{
+    font-style: italic;
+    color: var(--light-muted);
+  }
+}

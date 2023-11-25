@@ -1,0 +1,36 @@
+@mixin mainButton ($font-size, $min-width, $gap){
+  background-color: var(--primary);
+  border-radius: 15px;
+  color: var(--secondary);
+  padding: 5px;
+  min-width: $min-width;
+  font-size: $font-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+  border: 0;
+}
+
+.button-main {
+  @include mainButton(16px, 100px, 10px);
+}
+
+.button-navbar{
+  @include mainButton(16px, 100px, 10px);
+  background-color: transparent;
+  color: var(--main-c);
+  path{
+    fill: var(--main-c);
+  }
+
+}
+
+.button-menu {
+  @include mainButton(24px, 30px, 0px);
+  border-radius: 0px;
+  background-color: transparent;
+  transform: rotate(90deg);
+  color: var(--main-c);
+
+}

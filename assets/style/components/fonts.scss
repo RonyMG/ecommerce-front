@@ -1,0 +1,144 @@
+.main-h2{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--deeper-muted);
+  }
+  
+  .main-p{
+      font-size: 15px;
+      color: var(--deeper-muted);
+  }
+  
+  .main-label{
+      font-size: 15px;
+      color: var(--deep-muted);
+      &.main-label--error{
+          color: var(--red);
+      }
+  }
+  
+  // Class for tags that render html or full formated text, such as blog notes.
+  
+  .content-cali {
+      
+    font-weight: 300;
+  
+    h3 {
+        font-size: 22px;
+        font-weight: 900;
+        color: #3C3C3C;
+        text-align: start;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+  
+    p, span {
+        text-align: justify !important;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 300;
+    }
+    span[style="text-decoration: underline;"], u{
+        text-decoration: underline !important;
+        text-decoration-color: #19DCCB !important;
+        display: inline-block !important;
+        line-height: 20px !important;
+        text-decoration-thickness: 3px !important;
+    }
+    a{
+        color: #14aa9d;
+        text-decoration: underline;
+        text-decoration-color: #19DCCB;
+    }
+    ol,
+    ul {
+        padding-left: 0;
+        li {
+            text-align: justify !important;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            position: relative;
+            margin-left: 2.4em;
+  
+        }
+    }
+    ul {
+        li::marker {
+            font-size: 1.5em;
+            color: var(--secondary);
+        }
+    }
+  
+    ol {
+        list-style-type: none;
+        counter-reset: my-counter;
+        li{
+            li::before {
+                position: absolute;
+                left: -2.4em;
+                content:  "0"counter(my-counter);
+                counter-increment: my-counter;
+                color: #19DCCB;
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+  
+    }
+  
+    
+  
+    code {
+        background-color: gray;
+        padding: 10px 15px;
+        border-radius: 10px;
+        color: inherit;
+    }
+    u {
+        text-decoration: underline;
+        text-decoration-color: #19DCCB;
+        display: inline-block;
+        line-height: 20px;
+        text-decoration-thickness: 3px;
+    }
+    b, strong{
+        font-weight: bold;
+        color: #080808;
+    }
+    blockquote { 
+        width: 92%;
+        margin: auto;
+        position: relative;
+        padding-inline: 7px;
+        &::before {
+            content: open-quote;
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            font-size: 4em;
+            color: #19DCCB;
+        }
+        &::after {
+            content: close-quote;
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            font-size: 4em;
+            color: #19DCCB;
+        }
+        p{
+            margin: 0;
+            display: inline-block !important;
+            font-weight: bold;
+            span{
+                text-align: center !important;
+                display: inline-block !important;
+                font-weight: bold !important;
+            }
+        }
+    }
+  }
+  
