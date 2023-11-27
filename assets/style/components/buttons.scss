@@ -1,22 +1,28 @@
-@mixin mainButton ($font-size, $border-radius, $gap){
+@mixin mainButton ($font-size, $border-radius, $gap, $padding){
   background-color: var(--primary);
   border-radius: $border-radius;
   color: var(--secondary);
-  padding: 5px;
+  padding-block: 5px;
+  padding-inline: $padding;
   font-size: $font-size;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: $gap;
   border: 0;
+  &:hover{
+      scale: 1.07;
+      transition: scale .3s;
+  }
 }
 
-.button-main {
-  @include mainButton(16px, 100px, 10px);
+.main-button {
+  @include mainButton(16px, 100px, 10px, 25px);
+  color: var(--main-c)
 }
 
 .button-navbar{
-  @include mainButton(16px, 100px, 10px);
+  @include mainButton(16px, 100px, 10px, 10px);
   background-color: transparent;
   color: var(--main-c);
   path{
@@ -26,7 +32,7 @@
 }
 
 .button-menu {
-  @include mainButton(24px, 30px, 0px);
+  @include mainButton(24px, 30px, 0px, 10px);
   border-radius: 0px;
   background-color: transparent;
   transform: rotate(90deg);
@@ -35,7 +41,7 @@
 }
 
 .main-banner__button{
-  @include mainButton(30px, 50px, 25px);
+  @include mainButton(30px, 50px, 25px, 10px);
   color:red;
   aspect-ratio: 1/1;
   border-radius: 50px;
@@ -45,10 +51,6 @@
   border: 1px solid var(--main-c);
   min-width: 70px;
   opacity: .8;
-  &:hover{
-    transform: scale(1.2);
-    transition: transform .3s;
-  }
   &.main-banner__button--next{
     min-width: 70px;
   }

@@ -33,6 +33,7 @@
     --secondary: #727272;
     
     --main-c: black;
+    --main-bg: #f2f2f2;
 
     --lighter-muted: #eaeaea;
     --light-muted: #9e9e9e;
@@ -94,4 +95,12 @@
 
 .text-left {
     text-align: left;
+}
+
+.tag{
+    background-color: var(--main-bg);
+    font-size: 12px;
+    padding: 1px 10px;
+    border-radius: 15px;
+    max-width: min-content;
 }
