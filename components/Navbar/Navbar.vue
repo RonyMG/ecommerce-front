@@ -3,7 +3,7 @@
 
         <nav id="Header" class="header__nav navbar navbar-expand-lg">
             <div class="main-container container-fluid h-auto">
-            <a class="navbar-brand" href="#">logotipo</a>
+            <a class="navbar-brand" href="/">logotipo</a>
             <div class="d-flex">
                 <button class="button-menu d-flex d-xl-none"
                 type="button" 

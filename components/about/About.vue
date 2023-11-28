@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .main-container{
-  --main-max-width: 1200px;
+  --main-max-width: 1100px;
 
 }
 .about-grid{

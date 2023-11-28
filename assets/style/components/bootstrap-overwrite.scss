@@ -1,7 +1,11 @@
-.form-control, button.btn, button.navbar-toggler{
+.form-control, button.btn, button.navbar-toggler, .accordion-button:focus{
   &:focus, :active, &:checked{
     border-color: initial;
     outline: 0;
     box-shadow: none !important;
   }
+}
+
+.accordion-button:not(.collapsed){
+  background-color: var(--main-bg);
 }

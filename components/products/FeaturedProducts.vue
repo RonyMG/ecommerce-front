@@ -3,16 +3,18 @@
     <h2 class="main-h2 text-center">{{ sectionFeaturedProducts.title }}</h2>
     <p class="text-center">{{ sectionFeaturedProducts.paragraph }}</p>
     <div class="ft-products__cards-grid">
-        <div v-for="(featuredProduct, index) in featuredProducts" :key="index" class="ft-products__cards">
-            <img src="" alt="" class="ft-products__img">
-            <div class="ft-products__info">
-                <div class="tag">{{ featuredProduct.categorie}}</div>
-                <h4>{{ featuredProduct.title }}</h4>
-                <p >{{ featuredProduct.description }}</p>
-            </div>
+        <div v-for="(product, index) in products" :key="index" class="ft-products__cards">
+            <NuxtLink :to="`/products/${product._id.$oid}`">
+                <img :src="product.gallery.find(img => img.isMain)?.url" alt="" class="ft-products__img">
+                <div class="ft-products__info">
+                    <div class="tag">{{ product.categories[0]?.name }}</div>
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}</p>
+                </div>
+            </NuxtLink>
         </div>
     </div>
-    <button class="main-button">{{ sectionFeaturedProducts.cta }}</button>
+    <a href="/products/catalog" class="main-button">{{ sectionFeaturedProducts.cta }}</a>
   </div>
 </template>
 
@@ -24,11 +26,67 @@ export default {
             paragraph: 'Lorem ipsum dolors quis illum, ullam vitae officia quisquam quo ipsum voluptates illo quae hic iusto voluptate id quasi.',
             cta: 'Ver todos los productos',
         },
-        featuredProducts: [
-            { title: 'example', categorie: 'primera', href: '', src: '', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' },
-            { title: 'example', categorie: 'primera', href: '', src: '', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' },
-            { title: 'example', categorie: 'primera', href: '', src: '', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' },
-            { title: 'example', categorie: 'primera', href: '', src: '', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' },
+        products: [
+            {
+                _id: { $oid: 'product-1 '}, 
+                name: 'example', 
+                categories: [
+                    { name: 'primera', slug: 'primera' },
+                ],
+                gallery: [
+                    { url: '', alt: '', isMain: true },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                ],
+                price: 15.10,
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' 
+            },
+            {
+                _id: { $oid: 'product-2 '}, 
+                name: 'example', 
+                categories: [
+                    { name: 'segunda', slug: 'segunda' },
+                ],
+                gallery: [
+                    { url: '', alt: '', isMain: true },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                ],
+                price: 15.10,
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' 
+            },
+            {
+                _id: { $oid: 'product-3 '}, 
+                name: 'example', 
+                categories: [
+                    { name: 'tercera', slug: 'tercera' },
+                ],
+                gallery: [
+                    { url: '', alt: '', isMain: true },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                ],
+                price: 15.10,
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' 
+            },
+            {
+                _id: { $oid: 'product-4 '}, 
+                name: 'example', 
+                categories: [
+                    { name: 'cuarta', slug: 'cuarta' },
+                ],
+                gallery: [
+                    { url: '', alt: '', isMain: true },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                    { url: '', alt: '', isMain: false },
+                ],
+                price: 15.10,
+                description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga itaque repellat quaerat error blanditiis dignissimos ratione ab voluptatibus est optio quod, facilis deserunt harum pariatur. Pariatur hic maiores dolores alias.' 
+            },
         ]
     })
 }

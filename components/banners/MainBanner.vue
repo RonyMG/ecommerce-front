@@ -4,11 +4,13 @@
 
         <div ref="siemaContainer" class="main-section-mb">
             <div v-for="(slideObject, index) in slideObjects" :key="index" class="siema-slide main-banner__container">
-                <NuxtLink :href="slideObject.href" class="main-banner main-container" :class="`main-banner__dist-${slideObject.distribution}`" :style="{ backgroundImage: `url(${slideObject.imageUrl})` }">
+                <NuxtLink :href="slideObject.href" class="main-banner" :class="`main-banner__dist-${slideObject.distribution}`" :style="{ backgroundImage: `url(${slideObject.imageUrl})` }">
+                  <div class="main-container">
                     <div class="main-banner__info">
                         <h1 class="main-banner__h1">{{ `${slideObject.title}` }}</h1>
                         <p class="main-banner__p">{{ slideObject.description }}</p>
                     </div>
+                  </div>
                 </NuxtLink>
             </div>
         </div>
