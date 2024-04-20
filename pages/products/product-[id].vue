@@ -1,5 +1,5 @@
 <template>
-  <div>hola</div>
+  <div class="main-container">Product -{{ $route.params.id }}</div>
 </template>
 
 <script>
